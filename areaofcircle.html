@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Area of A Circle</title>
+    <style>
+    #myInput, #areaofCircle{
+      width: 25%; 
+      height: 50px;
+      border: 2px solid;
+      cursor: text;
+    }
+    button{
+      cursor: pointer;
+      width: 100px; height: 55px;
+      border: 1px solid;
+      font: 1em sans-serif;
+    }
+    </style>
+</head>
+<body>
+  <input type="text" placeholder="Input your radius" class='radii' id="myInput">
+  <button type="button" class="button" onclick="getInputValue();">Get Value</button>
+  <br> <br>
+  <input type="text" placeholder="Area of a circle" id="areaofCircle">
+  
+  <script>
+    var pi;
+
+     pi = Math.PI;
+      function getInputValue(){
+          // Selecting the input element and get its value 
+          var inputVal = document.getElementById("myInput").value; 
+          ///solving the area
+          var area = pi * inputVal *inputVal;
+          console.log(area)
+          // Displaying the value
+          document.getElementById("areaofCircle").value = area;
+        };
+        document.querySelector(".button").addEventListener('click', getInputValue);
+        document.addEventListener('keypress', function(event){
+      if (event.keyCode === 13 || event.which === 13){
+          getInputValue();
+      }
+     });
+  </script>
+</script>
+</body>
+</html>
